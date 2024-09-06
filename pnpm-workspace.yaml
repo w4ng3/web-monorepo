@@ -1,0 +1,4 @@
+packages:
+  - "main-project"
+  # 子目录下所有项目
+  - "packages/*"
