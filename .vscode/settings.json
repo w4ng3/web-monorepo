@@ -1,0 +1,50 @@
+{
+  // 配置语言的文件关联
+  "files.associations": {
+    "*.nvue": "vue",
+    "pages.json": "jsonc", // pages.json 可以写注释
+    "manifest.json": "jsonc",
+    ".prettierrc.json": "jsonc",
+    "extension.json": "jsonc"
+  },
+  // 禁用内置CSS、LESS、SCSS验证
+  // "css.validate": false,
+  // "less.validate": false,
+  // "scss.validate": false,
+  "explorer.confirmDelete": false,
+  "editor.fontSize": 12,
+  "window.zoomLevel": 0,
+  // 这些文件将不会显示在工作空间中
+  "files.exclude": {
+    "**/.git": false,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/*.js": {
+      "when": "$(basename).ts" //ts编译后生成的js文件将不会显示在工作区中
+    },
+    "**/node_modules": false
+  },
+  // GIT
+  "git.enableSmartCommit": true,
+  "git.autofetch": true,
+  // 重新设定tabsize
+  "editor.tabSize": 2,
+  // #值设置为true时，每次保存的时候自动格式化；
+  "editor.formatOnSave": true,
+  //对应长度处显示一条线
+  "editor.rulers": [100],
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  // 在使用搜索功能时，将这些文件夹/文件排除在外
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/target": true,
+    "**/logs": true
+  }
+}
