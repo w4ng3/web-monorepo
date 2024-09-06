@@ -2,3 +2,8 @@ packages:
   - "main-project"
   # 子目录下所有项目
   - "packages/*"
+
+catalog:
+  vite: ^5.4.3
+  typescript: ^5.2.2
+  vue: ^3.5.1
