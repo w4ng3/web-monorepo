@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import dayjs from 'dayjs';
-import HelloWorld from './components/HelloWorld.vue'
+import ZhihuHot from './components/ZhihuHot.vue';
+import TypeDemo from './components/TypeDemo.vue';
 import { Person } from '@w4ng3/tools'
 
 const p = new Person("Junmping", "math");
+
 </script>
 
 <template>
@@ -16,8 +18,9 @@ const p = new Person("Junmping", "math");
     <a href="https://vuejs.org/" target="_blank">
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
+    <TypeDemo />
   </div>
-  <HelloWorld msg="Vite + Vue" />
+  <ZhihuHot />
 </template>
 
 <style scoped>
