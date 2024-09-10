@@ -1,16 +1,16 @@
 <script lang="ts" setup>
-import { onMounted, ref } from 'vue';
-import type { ZhiHuHot, ZhiHuHotList } from '@/types/zh';
+import { onMounted, ref } from 'vue'
+import type { ZhiHuHot, ZhiHuHotList } from '@/types/zh'
 
-const list = ref<ZhiHuHot[]>([]);
+const list = ref<ZhiHuHot[]>([])
 
 const getData = async () => {
   // const url = "https://www.zhihu.com/api/v3/feed/topstory/hot-lists/total?limit=1&desktop=true";
   const url = '/api/v3/feed/topstory/hot-lists/total'
   try {
-    let response = await fetch(url, { mode: "no-cors" });
-    const res: ZhiHuHotList = await response.json();
-    list.value = res.data;
+    const response = await fetch(url, { mode: 'no-cors' })
+    const res: ZhiHuHotList = await response.json()
+    list.value = res.data
   }
   catch (error) {
     console.log('Request Failed', error)

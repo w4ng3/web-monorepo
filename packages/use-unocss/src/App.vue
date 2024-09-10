@@ -1,20 +1,28 @@
 <script setup lang="ts">
+const a: any = {
+  a: 1,
+  b: 2,
+}
+
+console.log('object :>> ', a)
+console.log('object :>> ')
 </script>
 
 <template>
   <div>
     <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
+      <img src="/vite.svg" class="logo" alt="Vite logo">
     </a>
     <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
+      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo">
     </a>
   </div>
-  <div h-20 bg-red flex text-xl class="mb-2">
+  <div h-20 flex bg-red text-xl class="mb-2">
     <span m-auto>hello</span>
   </div>
-  <button btn icon-btn>123</button>
-
+  <button btn icon-btn>
+    123
+  </button>
 </template>
 
 <style scoped>

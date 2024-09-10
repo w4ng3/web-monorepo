@@ -1,1 +1,1 @@
-declare function add<Type extends number | string>(a: Type, b: Type): Type;
+declare function add<Type extends number | string>(a: Type, b: Type): Type

@@ -2,12 +2,12 @@
   "name": "@w4ng3/tools",
   "version": "1.0.0",
   "description": "公共工具库",
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
   "main": "index.js",
   "module": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  }
 }

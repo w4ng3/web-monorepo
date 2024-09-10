@@ -6,7 +6,7 @@
  * @returns {number} 两个数字的和，或连接的字符串
  */
 export function sum(a, b) {
-  return a + b;
+  return a + b
 }
 
 const res = sum(1, '2')

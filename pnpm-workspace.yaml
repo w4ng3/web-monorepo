@@ -1,7 +1,7 @@
 packages:
-  - "main-project"
+  - main-project
   # 子目录下所有项目
-  - "packages/*"
+  - 'packages/*'
 
 catalog:
   vite: ^5.4.3
