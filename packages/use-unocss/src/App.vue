@@ -1,11 +1,5 @@
 <script setup lang="ts">
-const a: any = {
-  a: 1,
-  b: 2,
-}
-
-console.log('object :>> ', a)
-console.log('object :>> ')
+const a = 1
 </script>
 
 <template>

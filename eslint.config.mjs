@@ -30,6 +30,7 @@ export default antfu({
     'unused-imports/no-unused-vars': 'warn',
     'symbol-description': 'warn',
     'no-unused-vars': 'warn',
+    'unused-imports/no-unused-imports': 'error', // 禁止未使用的导入
   },
 }).overrideRules({
   // 强制类型和接口中的属性名和类型注释之间保持一致的间距
@@ -44,7 +45,7 @@ export default antfu({
     'ts/no-explicit-any': 'error', // 禁止使用any
     'jsdoc/sort-tags': ['warn'],
     'ts/ban-ts-comment': 'off', // 禁止使用 @ts-ignore
-    'ts/no-unused-expressions': 'off',
+    // 'ts/no-unused-expressions': 'off',
   },
 })
 
