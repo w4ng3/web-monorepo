@@ -46,5 +46,6 @@
     "**/bower_components": true,
     "**/target": true,
     "**/logs": true
-  }
+  },
+  "unocss.autocomplete.matchType": "fuzzy"
 }

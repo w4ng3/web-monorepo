@@ -27,7 +27,7 @@ const toggleHot = (id: number) => {
 </script>
 
 <template>
-  <div class="list">
+  <div class="list bg-blue-2 p-2">
     <section v-for="(item, index) in list" :key="item.id" class="hot" @click="toggleHot(item.target.id)">
       <span>{{ index + 1 }}</span>
       <div>
