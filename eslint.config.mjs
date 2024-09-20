@@ -32,6 +32,10 @@ export default antfu({
     'no-unused-vars': 'warn',
     'unused-imports/no-unused-imports': 'error', // 禁止未使用的导入
   },
+  formatters: {
+    css: true,
+    html: true,
+  },
 }).overrideRules({
   // 强制类型和接口中的属性名和类型注释之间保持一致的间距
   // 'style/key-spacing': ['warn', { align: 'colon', mode: 'strict' }],

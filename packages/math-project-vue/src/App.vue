@@ -1,10 +1,18 @@
 <script setup lang="ts">
 import { Person } from '@w4ng3/tools'
 import dayjs from 'dayjs'
-import TypeDemo from './components/TypeDemo.vue'
+import { onMounted } from 'vue'
+// import TypeDemo from './components/TypeDemo.vue'
 import ZhihuHot from './components/ZhihuHot.vue'
+import { useDark } from './composables/useDark'
 
 const p = new Person('Junmping', 'math')
+
+const { enableDarkMode, disableDarkMode, applySavedTheme } = useDark()
+
+onMounted(() => {
+  applySavedTheme()
+})
 </script>
 
 <template>
@@ -17,9 +25,16 @@ const p = new Person('Junmping', 'math')
     <a href="https://vuejs.org/" target="_blank">
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo">
     </a>
-    <TypeDemo />
+    <div class="flex justify-center gap-5">
+      <button @click="disableDarkMode">
+        Light
+      </button> <button @click="enableDarkMode">
+        Dark
+      </button>
+    </div>
+    <!-- <TypeDemo /> -->
+    <ZhihuHot />
   </div>
-  <ZhihuHot />
 </template>
 
 <style scoped>

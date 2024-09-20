@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { onMounted, ref } from 'vue'
 import type { ZhiHuHot, ZhiHuHotList } from '@/types/zh'
+import { onMounted, ref } from 'vue'
 
 const list = ref<ZhiHuHot[]>([])
 
@@ -27,69 +27,36 @@ const toggleHot = (id: number) => {
 </script>
 
 <template>
-  <div class="list bg-blue-2 p-2">
-    <section v-for="(item, index) in list" :key="item.id" class="hot" @click="toggleHot(item.target.id)">
+  <div class="w-full flex flex-col gap-3 p-5 dark:bg-pink">
+    <section
+      v-for="(item, index) in list"
+      :key="item.id"
+      class="hot cursor-pointer bg-#a992d5 md:bg-amber-4 sm:bg-blue-3"
+      @click="toggleHot(item.target.id)"
+    >
       <span>{{ index + 1 }}</span>
       <div>
-        <h1 class="ellipsis_2">
+        <h1 class="line-clamp-2 text-start text-lg">
           {{ item.target.title }}
         </h1>
-        <p class="ellipsis_1">
+        <p class="line-clamp-1">
           {{ item.target.excerpt }}
         </p>
-        <div style="text-align: start;">
+        <div text-start>
           {{ item.detail_text }}
         </div>
       </div>
-      <img :src="item.children[0].thumbnail" alt="">
+      <img :src="item.children[0].thumbnail" aspect-ratio="4/3" ml-auto w-45 rounded-md>
     </section>
   </div>
 </template>
 
 <style scoped>
-.list {
+.hot {
+  padding: 12px;
+  border-radius: 12px;
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 80vw;
-
-  .hot {
-    background-color: #a992d5;
-    padding: 12px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-
-    img {
-      width: 180px;
-      aspect-ratio: 4/3;
-      border-radius: 8px;
-      margin-left: auto;
-    }
-
-    h1 {
-      font-size: 20px;
-      text-align: start;
-    }
-  }
-}
-
-.ellipsis_1 {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  line-clamp: 1;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-}
-
-.ellipsis_2 {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  line-clamp: 2;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+  align-items: center;
+  gap: 8px;
 }
 </style>
