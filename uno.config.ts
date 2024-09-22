@@ -1,13 +1,18 @@
+import type { Theme } from 'unocss/preset-uno'
 import { defineConfig, presetAttributify, presetIcons, presetUno, transformerAttributifyJsx, transformerDirectives, transformerVariantGroup } from 'unocss'
+import presetTheme from 'unocss-preset-theme'
+import { myTheme } from './uno.theme'
 
 export default defineConfig({
-  // ...UnoCSS options
   presets: [
-    presetAttributify({ /* preset options */ }),
+    presetAttributify({}),
     presetUno(),
     presetIcons({
       scale: 1.2,
       warn: true,
+    }),
+    presetTheme<Theme>({
+      theme: myTheme,
     }),
   ],
   transformers: [
@@ -37,11 +42,11 @@ export default defineConfig({
       lg: ['1.25rem', '1.5rem'],
       xl: ['1.375rem', '2rem'],
     },
-    // breakpoints: {
-    //   sm: '640px',
-    //   md: '768px',
-    //   lg: '1024px',
-    //   xl: '1280px',
-    // },
+    breakpoints: {
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+    },
   },
 })

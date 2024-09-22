@@ -2,11 +2,12 @@
 import { Person } from '@w4ng3/tools'
 import dayjs from 'dayjs'
 import { onMounted } from 'vue'
+import ColorTheme from './components/ColorTheme.vue'
 // import TypeDemo from './components/TypeDemo.vue'
 import ZhihuHot from './components/ZhihuHot.vue'
 import { useDark } from './composables/useDark'
 
-const p = new Person('Junmping', 'math')
+const person = new Person('Junmping', 'math')
 
 const { enableDarkMode, disableDarkMode, applySavedTheme } = useDark()
 
@@ -18,7 +19,7 @@ onMounted(() => {
 <template>
   <div>
     <div>当前时间{{ dayjs().format('YYYY年MM月DD日 HH:mm:ss') }}</div>
-    <div>{{ p.name }} : {{ p.slogan }}</div>
+    <div>{{ person.name }} : {{ person.slogan }}</div>
     <a href="https://vitejs.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo">
     </a>
@@ -28,11 +29,13 @@ onMounted(() => {
     <div class="flex justify-center gap-5">
       <button @click="disableDarkMode">
         Light
-      </button> <button @click="enableDarkMode">
+      </button>
+      <button @click="enableDarkMode">
         Dark
       </button>
     </div>
     <!-- <TypeDemo /> -->
+    <ColorTheme />
     <ZhihuHot />
   </div>
 </template>

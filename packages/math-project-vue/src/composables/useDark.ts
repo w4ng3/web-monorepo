@@ -8,14 +8,12 @@ export function useDark() {
 
   /** 开启暗黑模式 */
   function enableDarkMode() {
-    // document.body.classList.add('dark-mode')
     document.documentElement.classList.toggle('dark', true)
     localStorage.setItem('color-scheme', 'dark')
   }
 
   /** 关闭暗黑模式 */
   function disableDarkMode() {
-    // document.body.classList.remove('dark-mode')
     document.documentElement.classList.toggle('dark', false)
     localStorage.setItem('color-scheme', 'light')
   }
