@@ -27,11 +27,11 @@ const toggleHot = (id: number) => {
 </script>
 
 <template>
-  <div class="w-full flex flex-col gap-3 p-5 dark:bg-pink">
+  <div class="flex flex-col gap-2 p-5">
     <section
       v-for="(item, index) in list"
       :key="item.id"
-      class="hot cursor-pointer bg-#a992d5 md:bg-amber-4 sm:bg-blue-3"
+      class="hot cursor-pointer bg-blue-4 sm:bg-#a992d5"
       @click="toggleHot(item.target.id)"
     >
       <span>{{ index + 1 }}</span>

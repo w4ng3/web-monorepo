@@ -2,12 +2,9 @@
 import { Person } from '@w4ng3/tools'
 import dayjs from 'dayjs'
 import { onMounted } from 'vue'
-import ColorTheme from './components/ColorTheme.vue'
-// import TypeDemo from './components/TypeDemo.vue'
-import ZhihuHot from './components/ZhihuHot.vue'
 import { useDark } from './composables/useDark'
 
-const person = new Person('Junmping', 'math')
+const person = new Person('W4ng3', 'React')
 
 const { enableDarkMode, disableDarkMode, applySavedTheme } = useDark()
 
@@ -27,16 +24,31 @@ onMounted(() => {
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo">
     </a>
     <div class="flex justify-center gap-5">
-      <button @click="disableDarkMode">
-        Light
+      <button btn @click="disableDarkMode">
+        <div i-carbon-light-filled />
       </button>
-      <button @click="enableDarkMode">
-        Dark
+      <button class="bg-black text-white btn" @click="enableDarkMode">
+        <div i-carbon-asleep />
       </button>
     </div>
-    <!-- <TypeDemo /> -->
-    <ColorTheme />
-    <ZhihuHot />
+    <!-- 路由匹配到的组件将渲染在这里 -->
+    <main class="m-2 h-70vh overflow-y-scroll rounded-xl bg-truegray-200 p-2 dark:bg-purple-300">
+      <p>
+        <strong>Current route path:</strong> {{ $route.fullPath }}
+      </p>
+      <header flex justify-center gap-4 text-xl>
+        <RouterLink to="/">
+          知乎热榜
+        </RouterLink>
+        <RouterLink to="/theme">
+          主题切换
+        </RouterLink>
+        <RouterLink to="/mock">
+          以赝顶真
+        </RouterLink>
+      </header>
+      <router-view />
+    </main>
   </div>
 </template>
 
@@ -54,5 +66,9 @@ onMounted(() => {
 
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
+}
+
+a:focus {
+  color: purple;
 }
 </style>
