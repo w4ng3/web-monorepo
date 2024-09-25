@@ -46,7 +46,7 @@ export default antfu({
   }],
 }).override('antfu/typescript/rules', {
   rules: {
-    'ts/no-explicit-any': 'error', // 禁止使用any
+    'ts/no-explicit-any': 'off', // 使用any
     'jsdoc/sort-tags': ['warn'],
     'ts/ban-ts-comment': 'off', // 禁止使用 @ts-ignore
     // 'ts/no-unused-expressions': 'off',

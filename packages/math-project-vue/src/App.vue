@@ -46,6 +46,9 @@ onMounted(() => {
         <RouterLink to="/mock">
           以赝顶真
         </RouterLink>
+        <RouterLink to="/i18n">
+          睁眼看世界
+        </RouterLink>
       </header>
       <router-view />
     </main>
