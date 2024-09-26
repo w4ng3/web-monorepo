@@ -1,4 +1,8 @@
 {
+  "i18n-ally.localesPaths": ["packages/math-project-vue/locales"],
+  "i18n-ally.sourceLanguage": "en",
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.sortKeys": true,
   // 配置语言的文件关联
   "files.associations": {
     "*.nvue": "vue",

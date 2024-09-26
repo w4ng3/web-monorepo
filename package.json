@@ -18,7 +18,8 @@
     "lint:view": "npx @eslint/config-inspector"
   },
   "dependencies": {
-    "dayjs": "^1.11.13"
+    "dayjs": "^1.11.13",
+    "vue-i18n": "^10.0.3"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.5.0",

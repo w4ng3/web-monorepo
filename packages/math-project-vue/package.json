@@ -12,9 +12,11 @@
     "@w4ng3/tools": "workspace:^",
     "mockjs": "^1.1.0",
     "vue": "catalog:",
+    "vue-i18n": "^10.0.3",
     "vue-router": "4"
   },
   "devDependencies": {
+    "@intlify/unplugin-vue-i18n": "^5.2.0",
     "@types/mockjs": "^1.0.10",
     "@vitejs/plugin-vue": "^5.1.2",
     "typescript": "catalog:",
