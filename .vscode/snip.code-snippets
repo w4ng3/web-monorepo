@@ -1,0 +1,43 @@
+{
+  "JS标题注释": {
+    "prefix": "jsTitle",
+    "body": [
+      "/**",
+      " *@description:",
+      " *@author: w4ng3 ",
+      " *@date: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}",
+      "*/"
+    ],
+    "description": "JS标题注释"
+  },
+  "JS函数注释": {
+    "prefix": "jsFn",
+    "body": [
+      "/**",
+      " * ${1:functionName}",
+      " *@param {${2:type} } ${3:param} - 描述",
+      " *@description:",
+      " *@author: w4ng3",
+      " *@date: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE} ",
+      " *@returns",
+      "*/"
+    ],
+    "description": "JS函数注释"
+  },
+  "箭头函数": {
+    //代码片段名称
+    "prefix": "af", //快捷键唤醒代码片段
+    "body": [
+      //body里面的内容就是代码段内容
+      "const $1 = ($2) => {$3}" // $1和$2为占位符
+    ],
+    "description": "Arrow Function" //代码片段的介绍描述
+  },
+  "JS-doc": {
+    "prefix": "//",
+    "body": [
+      "/** $1 */"
+    ],
+    "description": "tips"
+  },
+}

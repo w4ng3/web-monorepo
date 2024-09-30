@@ -1,9 +1,10 @@
 packages:
-  - "main-project"
+  - main-project
   # 子目录下所有项目
-  - "packages/*"
+  - 'packages/*'
 
 catalog:
   vite: ^5.4.3
-  typescript: ^5.2.2
-  vue: ^3.5.1
+  typescript: ^5.5.4
+  vue: ^3.5.3
+  unocss: ^0.62.3

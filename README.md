@@ -29,7 +29,7 @@ change
 
 点击 VSCode 左下角图标，找到导入配置文件，选择文件`web.code-profile`,创建配置文件，稍等一会儿安装好插件后会自动切换配置，也可手动切换。
 
-![image-20240906160227431](https://cdn.jsdelivr.net/gh/w4ng3/wiki-image@main/img/image-20240906160227431.png)
+<img src="https://cdn.jsdelivr.net/gh/w4ng3/wiki-image@main/img/image-20240906160227431.png" width="250" />
 
 ### 网络代理推荐
 
