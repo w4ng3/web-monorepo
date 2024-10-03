@@ -1,4 +1,5 @@
 import antfu from '@antfu/eslint-config'
+import globals from 'globals'
 
 export default antfu({
   unocss: true,
@@ -31,25 +32,29 @@ export default antfu({
     'symbol-description': 'warn',
     'no-unused-vars': 'warn',
     'unused-imports/no-unused-imports': 'error', // 禁止未使用的导入
+    'test/consistent-test-it': ['error', { withinDescribe: 'test' }],
+    'ts/no-explicit-any': 'off', // 使用any
+    'jsdoc/sort-tags': ['warn'],
+    'ts/ban-ts-comment': 'off', // 禁止使用 @ts-ignore
+    'vue/max-attributes-per-line': ['error', { // 强制执行模板中每行的多个属性
+      singleline: { max: 5 },
+      multiline: { max: 1 },
+    }],
+    // 'ts/no-unused-expressions': 'off',
+    // 强制类型和接口中的属性名和类型注释之间保持一致的间距
+    // 'style/key-spacing': ['warn', { align: 'colon', mode: 'strict' }],
+    // 'no-undef': ['error', {
+    //   "describe": true,
+    // }],
   },
   formatters: {
     css: true,
     html: true,
   },
-}).overrideRules({
-  // 强制类型和接口中的属性名和类型注释之间保持一致的间距
-  // 'style/key-spacing': ['warn', { align: 'colon', mode: 'strict' }],
-  // 强制执行模板中每行的多个属性
-  'vue/max-attributes-per-line': ['error', {
-    singleline: { max: 5 },
-    multiline: { max: 1 },
-  }],
-}).override('antfu/typescript/rules', {
-  rules: {
-    'ts/no-explicit-any': 'off', // 使用any
-    'jsdoc/sort-tags': ['warn'],
-    'ts/ban-ts-comment': 'off', // 禁止使用 @ts-ignore
-    // 'ts/no-unused-expressions': 'off',
+  languageOptions: {
+    globals: {
+      ...globals.jest,
+    },
   },
 })
 

@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest"
   },
   "dependencies": {
     "@w4ng3/tools": "workspace:^",
@@ -17,10 +18,13 @@
   },
   "devDependencies": {
     "@intlify/unplugin-vue-i18n": "^5.2.0",
+    "@testing-library/vue": "^8.1.0",
     "@types/mockjs": "^1.0.10",
     "@vitejs/plugin-vue": "^5.1.2",
+    "happy-dom": "^15.7.4",
     "typescript": "catalog:",
     "vite": "catalog:",
+    "vitest": "^2.1.1",
     "vue-tsc": "^2.0.29"
   }
 }

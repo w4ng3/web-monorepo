@@ -17,6 +17,13 @@ export default defineConfig({
       include: [path.resolve(__dirname, 'locales/**')],
     }),
   ],
+  // https://github.com/vitest-dev/vitest
+  // test: {
+  //   // 启用类似 jest 的全局测试 API
+  //   globals: true,
+  //   // 使用 happy-dom 模拟 DOM
+  //   environment: 'happy-dom',
+  // },
   resolve: {
     alias: { '@': '/src' },
   },

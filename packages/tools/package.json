@@ -1,13 +1,22 @@
 {
   "name": "@w4ng3/tools",
+  "type": "module",
   "version": "1.0.0",
   "description": "公共工具库",
-  "author": "",
+  "author": "w4ng3",
   "license": "ISC",
   "keywords": [],
   "main": "index.js",
   "module": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
+    "ts-node": "NODE_OPTIONS=--import=./register.js node"
+  },
+  "devDependencies": {
+    "@jest/globals": "^29.7.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
+    "typescript": "catalog:"
   }
 }

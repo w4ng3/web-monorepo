@@ -7,6 +7,7 @@
 
     /* Bundler mode */
     "moduleResolution": "bundler",
+    "types": ["vitest/globals"],
     "allowImportingTsExtensions": true,
 
     /* Linting */

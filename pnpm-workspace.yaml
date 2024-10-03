@@ -5,6 +5,6 @@ packages:
 
 catalog:
   vite: ^5.4.3
-  typescript: ^5.5.4
+  typescript: ^5.6.2
   vue: ^3.5.3
   unocss: ^0.62.3
