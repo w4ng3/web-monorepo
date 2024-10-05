@@ -18,12 +18,9 @@ export default defineConfig({
     }),
   ],
   // https://github.com/vitest-dev/vitest
-  // test: {
-  //   // 启用类似 jest 的全局测试 API
-  //   globals: true,
-  //   // 使用 happy-dom 模拟 DOM
-  //   environment: 'happy-dom',
-  // },
+  test: {
+    environment: 'jsdom',
+  },
   resolve: {
     alias: { '@': '/src' },
   },
