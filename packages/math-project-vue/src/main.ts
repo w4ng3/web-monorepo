@@ -1,4 +1,5 @@
 import messages from '@intlify/unplugin-vue-i18n/messages'
+import InvisUI from '@w4ng3/invis-ui'
 import { createApp } from 'vue'
 import { createI18n } from 'vue-i18n'
 import App from './App.vue'
@@ -6,7 +7,6 @@ import i18nPlugin from './plugins/i18n'
 import router from './router'
 import './style.css'
 import 'virtual:uno.css'
-
 
 const i18n = createI18n({
   legacy: false,
@@ -20,4 +20,5 @@ const app = createApp(App)
 app.use(router)
 app.use(i18nPlugin)
 app.use(i18n)
+app.use(InvisUI as any)
 app.mount('#app')
