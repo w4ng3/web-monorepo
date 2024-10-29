@@ -1,3 +1,3 @@
 import type { InjectionKey } from 'vue'
 
-export const key = Symbol() as InjectionKey<string>
+export const key = Symbol('key') as InjectionKey<string>
