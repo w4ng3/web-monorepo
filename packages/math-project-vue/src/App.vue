@@ -2,6 +2,7 @@
 import { Person } from '@w4ng3/tools'
 import dayjs from 'dayjs'
 import { onMounted } from 'vue'
+import { showMsg } from './components/MessageBox'
 import { useDark } from './composables/useDark'
 
 const person = new Person('W4ng3', 'React')
@@ -11,6 +12,22 @@ const { enableDarkMode, disableDarkMode, applySavedTheme } = useDark()
 onMounted(() => {
   applySavedTheme()
 })
+
+
+function openAleart() {
+  showMsg({
+    title: '标题',
+    content: '1234567',
+    closeable: true,
+    showCancle: true,
+    onCancel: () => {
+      console.log('Cancle :>>')
+    },
+    onConfirm: () => {
+      console.log('Confirm :>>')
+    },
+  })
+}
 </script>
 
 <template>
@@ -29,6 +46,9 @@ onMounted(() => {
       </button>
       <button class="bg-black text-white btn" @click="enableDarkMode">
         <div i-carbon-asleep />
+      </button>
+      <button class="bg-red text-white btn" @click="openAleart">
+        aleart
       </button>
     </div>
     <!-- 路由匹配到的组件将渲染在这里 -->
