@@ -1,4 +1,4 @@
-/* eslint-disable ts/no-unsafe-function-type */
+
 
 // https://typescript.p6p.net/typescript-tutorial/decorator.html
 
