@@ -1,6 +1,10 @@
+<script lang="ts" setup>
+import ZhihuHot from '@/components/ZhihuHot.vue'
+</script>
+
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <ZhihuHot />
   </div>
 </template>
 
