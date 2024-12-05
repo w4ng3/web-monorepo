@@ -14,6 +14,7 @@ export interface ZhihuHot {
 }
 
 export const getZhihuHot = async (): Promise<ZhihuHot[]> => {
+  // return mockZhihuHot()
   try {
     const url = '/api/v3/feed/topstory/hot-lists/total?limit=1&desktop=true'
     const response = await fetch(url, { mode: 'no-cors' })
