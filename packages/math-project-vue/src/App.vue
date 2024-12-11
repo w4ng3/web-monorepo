@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { Person } from '@w4ng3/tools'
+import { sum } from '@w4ng3/tools/src/sum'
+import { setupCounter } from '@w4ng3/utils'
 import dayjs from 'dayjs'
-import { onMounted } from 'vue'
+import { onMounted, useTemplateRef } from 'vue'
 import { showMsg } from './components/MessageBox'
 import { useDark } from './composables/useDark'
 
@@ -9,10 +11,13 @@ const person = new Person('W4ng3', 'React')
 
 const { enableDarkMode, disableDarkMode, applySavedTheme } = useDark()
 
+const counter = useTemplateRef('counter')
+
 onMounted(() => {
   applySavedTheme()
+  console.log(sum(1, 2))
+  setupCounter(counter.value!)
 })
-
 
 function openAleart() {
   showMsg({
@@ -33,6 +38,11 @@ function openAleart() {
 <template>
   <div>
     <div>当前时间{{ dayjs().format('YYYY年MM月DD日 HH:mm:ss') }}</div>
+
+    <button ref="counter">
+      click??
+    </button>
+    <div>{{ person.name }} : {{ person.slogan }}</div>
     <div>{{ person.name }} : {{ person.slogan }}</div>
     <a href="https://vitejs.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo">

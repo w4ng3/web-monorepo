@@ -5,6 +5,6 @@ export class Person {
   }
 
   get slogan() {
-    return `${this.plan} is just my plan B`
+    return `${this.plan} is just my plan B!`
   }
 }

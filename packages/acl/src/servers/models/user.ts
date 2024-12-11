@@ -19,6 +19,10 @@ function MockProperty(mockTemplate: any, count?: number) {
 }
 
 export class User {
+  constructor(data: Partial<User>) {
+    Object.assign(this, data)
+  }
+
   @MockProperty('@cname')
   name: string = '员工-'
 
@@ -65,5 +69,5 @@ export class User {
   }> = []
 }
 
-const user = new User()
-console.log('user :>> ', user)
+// const user = new User()
+// console.log('user :>> ', user)

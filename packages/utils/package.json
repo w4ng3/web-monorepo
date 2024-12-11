@@ -1,0 +1,24 @@
+{
+  "name": "@w4ng3/utils",
+  "type": "module",
+  "version": "0.1.0",
+  "private": false,
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "tsc && vite build"
+  },
+  "devDependencies": {
+    "typescript": "~5.6.2",
+    "vite": "^6.0.1",
+    "vite-plugin-dts": "^4.3.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
