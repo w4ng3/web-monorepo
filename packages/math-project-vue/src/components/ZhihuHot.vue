@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import type { ZhiHuHot, ZhiHuHotList } from '@/types/zh'
-import { onMounted, ref } from 'vue'
+import { getRandomColor } from '@w4ng3/utils'
+import { onMounted, reactive, ref } from 'vue'
 
 const list = ref<ZhiHuHot[]>([])
 
@@ -17,8 +18,15 @@ const getData = async () => {
   }
 }
 
+const color = reactive({
+  danger: 'pink',
+})
+
 onMounted(() => {
   getData()
+  setTimeout(() => {
+    color.danger = getRandomColor('hsl')
+  }, 1000)
 })
 
 const toggleHot = (id: number) => {
@@ -58,5 +66,6 @@ const toggleHot = (id: number) => {
   display: flex;
   align-items: center;
   gap: 8px;
+  color: v-bind('color.danger');
 }
 </style>

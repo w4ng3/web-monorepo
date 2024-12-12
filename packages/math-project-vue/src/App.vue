@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { Person } from '@w4ng3/tools'
-import { sum } from '@w4ng3/tools/src/sum'
 import { setupCounter } from '@w4ng3/utils'
 import dayjs from 'dayjs'
 import { onMounted, useTemplateRef } from 'vue'
@@ -15,7 +14,6 @@ const counter = useTemplateRef('counter')
 
 onMounted(() => {
   applySavedTheme()
-  console.log(sum(1, 2))
   setupCounter(counter.value!)
 })
 
@@ -33,14 +31,16 @@ function openAleart() {
     },
   })
 }
+
+// const hdiv = h('div', { id: 'foo' }, ['why so serious', h('span', { style: { color: 'cyan' } }, ['?'])])
 </script>
 
 <template>
   <div>
     <div>当前时间{{ dayjs().format('YYYY年MM月DD日 HH:mm:ss') }}</div>
-
+    <!-- <hdiv class="bg-red" /> -->
     <button ref="counter">
-      click??
+      click
     </button>
     <div>{{ person.name }} : {{ person.slogan }}</div>
     <div>{{ person.name }} : {{ person.slogan }}</div>
