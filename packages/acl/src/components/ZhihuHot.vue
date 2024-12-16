@@ -4,7 +4,7 @@ import { onMounted, ref } from 'vue'
 
 const list = ref<ZhihuHot[]>([])
 
-onMounted(() => {
+onMounted(async () => {
   getZhihuHot().then((res) => {
     list.value = res
   })

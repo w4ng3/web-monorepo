@@ -31,14 +31,11 @@ function openAleart() {
     },
   })
 }
-
-// const hdiv = h('div', { id: 'foo' }, ['why so serious', h('span', { style: { color: 'cyan' } }, ['?'])])
 </script>
 
 <template>
   <div>
     <div>当前时间{{ dayjs().format('YYYY年MM月DD日 HH:mm:ss') }}</div>
-    <!-- <hdiv class="bg-red" /> -->
     <button ref="counter">
       click
     </button>
@@ -66,7 +63,7 @@ function openAleart() {
       <p>
         <strong>Current route path:</strong> {{ $route.fullPath }}
       </p>
-      <header flex justify-center gap-4 text-xl>
+      <header class="flex justify-center gap-4 text-xl">
         <RouterLink to="/">
           知乎热榜
         </RouterLink>
@@ -78,6 +75,9 @@ function openAleart() {
         </RouterLink>
         <RouterLink to="/i18n">
           睁眼看世界
+        </RouterLink>
+        <RouterLink to="/render">
+          渲染函数
         </RouterLink>
       </header>
       <router-view />

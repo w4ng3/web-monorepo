@@ -1,6 +1,7 @@
 import path from 'node:path'
 import VueI18n from '@intlify/unplugin-vue-i18n/vite'
 import vue from '@vitejs/plugin-vue'
+import vueJsx from '@vitejs/plugin-vue-jsx'
 import UnoCSS from 'unocss/vite'
 import { defineConfig } from 'vite'
 
@@ -9,6 +10,7 @@ export default defineConfig({
   plugins: [
     vue(),
     UnoCSS(),
+    vueJsx(),
     // https://github.com/intlify/bundle-tools/tree/main/packages/unplugin-vue-i18n
     VueI18n({
       runtimeOnly: true,
@@ -18,9 +20,6 @@ export default defineConfig({
     }),
   ],
   // https://github.com/vitest-dev/vitest
-  test: {
-    environment: 'jsdom',
-  },
   resolve: {
     alias: { '@': '/src' },
   },
