@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "ES2020",
     "jsx": "preserve",
+    "jsxImportSource": "vue",
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "moduleDetection": "force",
     "useDefineForClassFields": true,
@@ -14,6 +15,7 @@
     "paths": {
       "@/*": ["./src/*"]
     },
+    "types": ["unplugin-vue-macros/macros-global"],
     "allowImportingTsExtensions": true,
 
     /* Linting */

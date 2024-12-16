@@ -41,12 +41,14 @@ export default antfu({
       multiline: { max: 1 },
     }],
     'ts/no-unsafe-function-type': 'off',
+    'react-dom/no-missing-button-type': 'off',
     // 'ts/no-unused-expressions': 'off',
     // 强制类型和接口中的属性名和类型注释之间保持一致的间距
     // 'style/key-spacing': ['warn', { align: 'colon', mode: 'strict' }],
     // 'no-undef': ['error', {
     //   "describe": true,
     // }],
+    'style/jsx-one-expression-per-line': ['warn', { allow: 'non-jsx' }],
   },
   formatters: {
     css: true,

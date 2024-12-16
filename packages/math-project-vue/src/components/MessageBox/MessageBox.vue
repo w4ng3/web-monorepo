@@ -1,5 +1,18 @@
 <script lang="ts" setup>
-import type { MessageBoxProps } from './index'
+interface MessageBoxProps {
+  /** 标题 */
+  title?: string
+  /** 内容 */
+  content: string
+  /** 可关闭 */
+  closeable?: boolean
+  /** 显示取消按钮 */
+  showCancle?: boolean
+  /** 显示确定按钮 */
+  showConfirm?: boolean
+  /** 显示Icon图标 */
+  showIcon?: boolean
+}
 
 const {
   closeable = true,

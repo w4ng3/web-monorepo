@@ -1,5 +1,4 @@
 import { mockZhihuHot } from './mocks/zhihu'
-import { User } from './models/user'
 
 export interface ZhihuHot {
   /** 唯一标识 */
@@ -55,13 +54,3 @@ export const getZhihuHot = async (): Promise<ZhihuHot[]> => {
     return mockZhihuHot()
   }
 }
-
-export const getUser = async (): Promise<User> => {
-  return new User({
-    name: '王东',
-  })
-}
-
-
-// const res = await getUser()
-// console.log('res :>> ', res)

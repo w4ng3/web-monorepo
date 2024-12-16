@@ -1,6 +1,14 @@
-<script setup lang="ts">
+<script setup lang="tsx">
 import { RouterLink, RouterView } from 'vue-router'
+import vueSvg from './assets/logo.svg'
 import HelloWorld from './components/HelloWorld.vue'
+
+const Jsxtest = (
+  <>
+    {/* 一张图片 */}
+    <img src={vueSvg} alt="Vue logo" />
+  </>
+)
 </script>
 
 <template>
