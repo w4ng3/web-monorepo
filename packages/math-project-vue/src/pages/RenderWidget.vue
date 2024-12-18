@@ -1,16 +1,34 @@
 <script lang="tsx" setup>
+// import type { ComponentExposed } from 'vue-component-type-helpers'
 import vueSvg from '@/assets/vue.svg'
-import { h, ref } from 'vue'
+import FComponent from '@/components/render/FComponent'
+import { FunctionComp } from '@/components/render/Optional/FunctionComp'
+import RenderComp from '@/components/render/Optional/RenderComp'
+import SetupComp from '@/components/render/Optional/SetupComp'
+import { h, ref, useTemplateRef } from 'vue'
 
-const hdiv = h('div', { id: 'foo' }, ['why so serious', h('span', { style: { color: 'cyan' } }, ['?'])])
+const Hdiv = h('div', { id: 'foo' }, ['why so serious', h('span', { style: { color: 'cyan' } }, ['?'])])
 
-const Jsxtest = (
+const JsxWidget = (
   <>
     <img src={vueSvg} alt="Vue logo" />
   </>
 )
 
-const Foo = {
+function RenderDiv() {
+  const items = ref([{ id: 1, text: '王一' }, { id: 2, text: '王二' }, { id: 3, text: '王三' }])
+  return (
+    <ul>
+      {items.value.map(({ id, text }) => {
+        return <li key={id}>{text}</li>
+      })}
+    </ul>
+  )
+}
+
+// 选项式写法
+const OptionalFoo = {
+  props: ['text'],
   setup() {
     const count = ref(0)
     return { count }
@@ -19,27 +37,48 @@ const Foo = {
     // 必须调用 ctx
     return (
       <>
-        <div>{ctx.count}</div>
+        <div>{`${ctx.text}:${ctx.count}`}</div>
         <button onClick={() => ctx.count++}>onClick</button>
       </>
     )
   },
 }
 
-function RenderDiv() {
-  return (
-    <div class="bg-red text-yellow-2">
-      <div>1</div>
-      <div>2</div>
-      <div>3</div>
-    </div>
-  )
+function getMeg(params: string) {
+  // eslint-disable-next-line no-alert
+  alert(params)
 }
+
+const comRef = useTemplateRef<InstanceType<typeof FunctionComp>>('comRef')
+function aaa() {
+  // @ts-ignore
+  comRef.value!.count++
+}
+
+const renderRef = useTemplateRef<InstanceType<typeof RenderComp>>('renderRef')
 </script>
 
 <template>
-  <hdiv class="bg-red" />
-  <Jsxtest />
-  <Foo />
+  <Hdiv class="bg-red" />
+  <JsxWidget />
+  <OptionalFoo text="计数" />
   <RenderDiv />
+  <FComponent message="函数式组件" @send-message="getMeg" />
+  <FunctionComp ref="comRef" msg="W2" :list="[1, 2, 3]" class="bg-cyan" @send-msg="getMeg">
+    <div class="cursor-pointer text-pink" @click="aaa">
+      默认插槽，click here
+    </div>
+    <template #footer="slotProps">
+      <div>footer {{ slotProps.data }}</div>
+    </template>
+  </FunctionComp>
+  <RenderComp ref="renderRef" type="success" message="一个旅人" class="bg-red text-#9353f8" @go="getMeg">
+    最后的终局如何？
+  </RenderComp>
+  <div @click="() => renderRef?.abc()">
+    {{ renderRef?.title }}
+  </div>
+  <SetupComp type="success" message="一个旅人">
+    急不可待的欲知下文
+  </SetupComp>
 </template>
