@@ -38,7 +38,7 @@ export const FunctionComp = defineComponent((props: Props, context: SetupContext
   return () => {
     // 渲染函数或 JSX
     return (
-      <div>
+      <div class="rounded bg-amber-3">
         <div>{count.value}</div>
         <div>{list}</div>
         <button onClick={emitMsg}>{msg}</button>

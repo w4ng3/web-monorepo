@@ -15,6 +15,7 @@
     "paths": {
       "@/*": ["./src/*"]
     },
+    "types": ["unplugin-vue-macros/macros-global"],
     "allowImportingTsExtensions": true,
 
     /* Linting */
@@ -25,6 +26,9 @@
     "noEmit": true,
     "isolatedModules": true,
     "skipLibCheck": true
+  },
+  "vueCompilerOptions": {
+    "plugins": ["unplugin-vue-macros/volar"]
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"]
 }

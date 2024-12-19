@@ -2,6 +2,14 @@ import type { OptionalSlots } from './optionalProps'
 import { computed, defineComponent } from 'vue'
 import { optionalProps } from './optionalProps'
 
+
+function AComp(props: { title: string }) {
+  const { title } = props
+  return (
+    <div class="bg-purple text-white">{title}</div>
+  )
+}
+
 const SetupComp = defineComponent({
   name: 'SetupComp',
   props: optionalProps,
@@ -20,7 +28,7 @@ const SetupComp = defineComponent({
 
     return () => (
       <div class="bg-pink">
-        <span>setup return</span>
+        <AComp title="setup return" />
         <h1
           class="cursor-pointer text-2xl"
           v-show={props.type === 'success'}

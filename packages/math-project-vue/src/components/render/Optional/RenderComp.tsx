@@ -33,8 +33,8 @@ const RenderComp = defineComponent({
     // @ts-ignore
     const { $props, $emit, $attrs, $slots } = this
     return (
-      <>
-        <span>render return</span>
+      <div>
+        <div class="bg-purple text-white">render return</div>
         <h1
           class="cursor-pointer text-2xl"
           v-show={$props.type === 'success'}
@@ -56,7 +56,7 @@ const RenderComp = defineComponent({
             $stable: true, // 作用待验证 https://juejin.cn/post/6913855965792043021#heading-23
           }}
         </FunctionComp>
-      </>
+      </div>
     )
   },
 })
