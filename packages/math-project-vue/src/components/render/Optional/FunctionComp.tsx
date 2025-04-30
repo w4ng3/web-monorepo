@@ -7,7 +7,7 @@ import { defineComponent, ref } from 'vue'
 
 
 interface Props {
-  msg?: string
+  msg: string
   list: number[]
 }
 
@@ -20,46 +20,46 @@ type Slots = SlotsType<{
   footer: { data: number }
 }>
 
-export const FunctionComp = defineComponent((props: Props, context: SetupContext<Events, Slots>) => {
-  // 就像在 <script setup> 中一样使用组合式 API
-  const { emit, slots, attrs, expose } = context
-  // 可在解构里设置可选项的默认值
-  const { msg = '王東', list } = props
+export const FunctionComp = defineComponent(
+  (props: Props, context: SetupContext<Events, Slots>) => {
+    // 就像在 <script setup> 中一样使用组合式 API
+    const { emit, slots, attrs, expose } = context
 
-  const count = ref(0)
+    const count = ref(0)
 
-  function emitMsg() {
-    count.value -= -1
-    return emit('sendMsg', count.value.toString())
-  }
-  expose({
-    count,
-  })
+    function emitMsg() {
+      count.value -= -1
+      return emit('sendMsg', count.value.toString())
+    }
+    expose({
+      count,
+    })
 
-  return () => {
+    return () => {
     // 渲染函数或 JSX
-    return (
-      <div class="rounded bg-amber-3">
-        <div>{count.value}</div>
-        <div>{list}</div>
-        <button onClick={emitMsg}>{msg}</button>
-        {/* 默认插槽 */}
-        <div {...attrs}>{slots.default()}</div>
-        {/* 具名插槽 */}
-        <div>{slots.footer({ data: 4396 })}</div>
-      </div>
-    )
-  }
-},
-// 目前仍然需要手动声明运行时的 props
-{
-  name: 'FunctionComp',
-  props: ['list', 'msg'],
-  emits: {
-    sendMsg: (value: string) => value,
+      return (
+        <div class="rounded bg-amber-3">
+          <div>{count.value}</div>
+          <div>{props.list}</div>
+          <button onClick={emitMsg}>{props.msg}</button>
+          {/* 默认插槽 */}
+          <div {...attrs}>{slots.default()}</div>
+          {/* 具名插槽 */}
+          <div>{slots.footer({ data: 4396 })}</div>
+        </div>
+      )
+    }
   },
-  slots: {} as Slots,
-  inheritAttrs: false, // 配合 attrs 使用
-})
+  // 目前仍然需要手动声明运行时的 props
+  {
+    name: 'FunctionComp',
+    props: ['list', 'msg'],
+    emits: {
+      sendMsg: (value: string) => value,
+    },
+    slots: {} as Slots,
+    inheritAttrs: false, // 配合 attrs 使用
+  },
+)
 
 // 参考 https://segmentfault.com/q/1010000043673705

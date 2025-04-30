@@ -30,7 +30,6 @@ const RenderComp = defineComponent({
     }
   },
   render() {
-    // @ts-ignore
     const { $props, $emit, $attrs, $slots } = this
     return (
       <div>
