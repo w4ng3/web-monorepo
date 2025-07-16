@@ -1,5 +1,4 @@
 <script lang="tsx" setup>
-// import type { ComponentExposed } from 'vue-component-type-helpers'
 import vueSvg from '@/assets/vue.svg'
 import FComponent from '@/components/render/FComponent'
 import CardWidget from '@/components/render/mixin/CardWidget.vue'
@@ -8,7 +7,8 @@ import RenderVue from '@/components/render/mixin/RenderVue.vue'
 import { FunctionComp } from '@/components/render/Optional/FunctionComp'
 import RenderComp from '@/components/render/Optional/RenderComp'
 import SetupComp from '@/components/render/Optional/SetupComp'
-import { h, ref, useTemplateRef } from 'vue'
+import SimpleProps from '@/components/render/Optional/SimpleProps'
+import { h, onMounted, ref, useTemplateRef } from 'vue'
 
 const Hdiv = h('div', { id: 'foo' }, ['why so serious', h('span', { style: { color: 'cyan' } }, ['?'])])
 
@@ -59,6 +59,13 @@ function aaa() {
 }
 
 const renderRef = useTemplateRef<InstanceType<typeof RenderComp>>('renderRef')
+const simplePropWidget = useTemplateRef('simplePropWidget')
+
+onMounted(() => {
+  // console.log('simplePropWidget:', simplePropWidget.value)
+  // @ts-expect-error
+  console.log('simplePropWidget:', simplePropWidget.value?.firstRef)
+})
 </script>
 
 <template>
@@ -85,6 +92,13 @@ const renderRef = useTemplateRef<InstanceType<typeof RenderComp>>('renderRef')
     <CardWidget author="王小波" title="红拂夜奔" date="1997" />
     <RenderVue author="王二" title="黄金时代" />
     <Foo foo="HELLO" />
+
+    <SimpleProps ref="simplePropWidget" foo="FOO" class="bg-red" @click="() => console.log('SimpleProps')">
+      <div>Default Slot</div>
+      <template #foo="data">
+        <div>{{ data }}?</div>
+      </template>
+    </SimpleProps>
   </div>
   <div @click="() => renderRef?.abc()">
     {{ renderRef?.title }}

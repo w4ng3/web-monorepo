@@ -15,7 +15,13 @@ export default defineConfig({
         vue: vue({
           include: [/\.vue$/, /\.setup\.[cm]?[jt]sx?$/],
         }),
-        vueJsx: vueJsx(), // 如有需要
+        vueJsx: vueJsx({
+          defineComponentName: [
+            'defineComponent',
+            'defineFunctionalComponent',
+            'defineSimpleComponent',
+          ],
+        }),
         // vueRouter: VueRouter({ // 如有需要
         //   extensions: ['.vue', '.setup.tsx'],
         // }),

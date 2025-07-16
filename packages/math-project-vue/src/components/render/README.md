@@ -10,3 +10,5 @@
 [Vue3中使用JSX简明语法](https://juejin.cn/post/7114063575122984973)
 
 [在Vue3中使用FC + jsx/tsx的写法会损失多大性能？](https://www.zhihu.com/question/502934911/answer/2261782829)
+
+[vue-simple-props](https://github.com/sxzz/vue-simple-props)
